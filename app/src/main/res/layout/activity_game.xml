@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical"
+    android:paddingTop="32dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <!-- Top row: Title + Score boxes -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2048"
+            android:textSize="@dimen/title_text_size"
+            android:textColor="@color/title_color"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"/>
+
+        <!-- Score Box -->
+        <LinearLayout
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/score_box_bg"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:layout_marginEnd="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/score"
+                android:textSize="11sp"
+                android:textColor="#F5F0E8"
+                android:letterSpacing="0.05"/>
+            <TextView
+                android:id="@+id/tvScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Best Score Box -->
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/score_box_bg"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_score"
+                android:textSize="10sp"
+                android:textColor="#F5F0E8"
+                android:letterSpacing="0.05"/>
+            <TextView
+                android:id="@+id/tvBestScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action row: Back button + Undo + Shuffle -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Back to menu button -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/action_btn_bg"
+            android:src="@drawable/ic_back_menu"
+            android:contentDescription="메뉴로"
+            android:padding="12dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <!-- Undo Button -->
+        <ImageButton
+            android:id="@+id/btnUndo"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/action_btn_bg"
+            android:src="@drawable/ic_undo"
+            android:contentDescription="@string/undo"
+            android:padding="12dp"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- Shuffle / New Game Button -->
+        <ImageButton
+            android:id="@+id/btnShuffle"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/action_btn_bg"
+            android:src="@drawable/ic_shuffle"
+            android:contentDescription="@string/shuffle"
+            android:padding="12dp"/>
+    </LinearLayout>
+
+    <!-- Game Board -->
+    <com.game2048.app.GameBoardView
+        android:id="@+id/gameBoardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Game Over Overlay (hidden initially) -->
+    <FrameLayout
+        android:id="@+id/gameOverOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/game_over_bg"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvGameOverText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_over"
+                android:textSize="28sp"
+                android:textColor="@color/title_color"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/continue_game"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/btn_start"
+                    android:layout_marginEnd="12dp"
+                    android:visibility="gone"
+                    app:cornerRadius="6dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNewGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/new_game"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/btn_start"
+                    app:cornerRadius="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

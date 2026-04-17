@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_main">#DDD4C2</color>
+    <color name="board_bg">#C8BBAA</color>
+    <color name="cell_empty">#C8BBAA</color>
+    <color name="cell_2">#EEE4DA</color>
+    <color name="cell_4">#EDE0C8</color>
+    <color name="cell_8">#F2B179</color>
+    <color name="cell_16">#F59563</color>
+    <color name="cell_32">#F67C5F</color>
+    <color name="cell_64">#F65E3B</color>
+    <color name="cell_128">#EDCF72</color>
+    <color name="cell_256">#EDCC61</color>
+    <color name="cell_512">#EDC850</color>
+    <color name="cell_1024">#EDC53F</color>
+    <color name="cell_2048">#EDC22E</color>
+    <color name="cell_super">#3C3A32</color>
+    <color name="text_dark">#776E65</color>
+    <color name="text_light">#F9F6F2</color>
+    <color name="text_score_label">#BBADA0</color>
+    <color name="btn_start">#E07050</color>
+    <color name="btn_start_text">#FFFFFF</color>
+    <color name="score_bg">#BBADA0</color>
+    <color name="action_btn_bg">#BBADA0</color>
+    <color name="title_color">#776E65</color>
+    <color name="arrow_color">#A09080</color>
+    <color name="white">#FFFFFF</color>
+</resources>

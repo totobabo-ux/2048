@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="board_margin">16dp</dimen>
+    <dimen name="cell_gap">8dp</dimen>
+    <dimen name="cell_corner_radius">6dp</dimen>
+    <dimen name="board_corner_radius">8dp</dimen>
+    <dimen name="score_text_size">12sp</dimen>
+    <dimen name="score_value_size">18sp</dimen>
+    <dimen name="title_text_size">48sp</dimen>
+    <dimen name="btn_start_text_size">20sp</dimen>
+    <dimen name="difficulty_text_size">22sp</dimen>
+</resources>
