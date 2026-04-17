@@ -7,8 +7,8 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     android:paddingTop="16dp"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
     android:paddingBottom="8dp">
 
     <!-- Top row: Title + Score boxes -->
